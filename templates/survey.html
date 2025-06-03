@@ -19,7 +19,7 @@
     <div class="fixed-logo">
         <img src="{{ url_for('static', filename='images/company-logo.png') }}" alt="Company Logo" class="company-logo">
     </div>
-    
+
     <div class="survey-container">
         <div class="container">
             <div class="row justify-content-center">
@@ -61,7 +61,7 @@
                         </div>
 
                         <!-- Survey Form -->
-                        <form method="POST" action="{{ url_for('submit_survey', survey_id=survey.survey_id) }}" id="surveyForm">
+                        <form method="POST" action="/survey/{{ survey.survey_id }}/submit" id="surveyForm">
 
                             <!-- Aéreo Section -->
                             <div class="question-section">
