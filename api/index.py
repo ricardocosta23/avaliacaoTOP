@@ -7,12 +7,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from app import app
 
-# This is required for Vercel - the app itself is the handler
-def handler(environ, start_response):
-    return app(environ, start_response)
-
-# For backwards compatibility
-application = app
+# Vercel expects the app to be exported directly
+# Remove the custom handler function that's causing the error
+app = app
 
 if __name__ == "__main__":
     app.run()
